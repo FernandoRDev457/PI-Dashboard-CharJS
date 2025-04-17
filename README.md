@@ -1,6 +1,6 @@
 # Atividade – Dashboard de Temperatura e Umidade 🌡️💧
 
-Atividade simples com visualização de:
+Atividade Aprendendo a usar o Chart.js, exibindo uma Dashboard com:
 
 - Maiores e menores valores de temperatura e umidade
 - Gráficos de linha e barra com Chart.js
