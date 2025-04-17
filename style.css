@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.title-dashboard {
+    padding: 15px 30px;
+    background-color: rgb(81, 203, 255);
+    border-bottom: 4px solid rgb(0, 167, 239);
+    color: white;
+}
+
+/*KPI's*/
+.container-kpis{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 10px 0px 10px;
+}
+
+.kpi {
+    width: 280px;
+    height: 110px;
+    border: 2px solid rgb(215, 215, 215);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kpi h4 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.kpi .data {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.kpi .datatime {
+    font-size: 11px;
+    color: gray;
+}
+
+.kpi .max {
+    color: red;
+}
+
+.kpi .min {
+    color: rgb(0, 140, 255);
+}
+
+/*GRÁFICOS*/
+
+.container-grafic {
+    padding: 50px 30px;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.container-grafic .grafic-canva {
+    width: 45%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(215, 215, 215);
+    display: flex;
+    justify-content: center;
+}
+
+.container-grafic .grafic-canva canvas {
+    height: 100%;
+}

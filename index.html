@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Temperatura e Umidade</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container-dashboard">
+        <h3 class="title-dashboard">Dashboard</h3>
+
+        <div class="container-kpis">
+            <div class=" kpi">
+                <h4>Maior Temperatura registrada:</h4>
+                <p class="data max">30° C</p>
+                <p class="datatime">Registrada em 17/04/2025 às 20:00</p>
+            </div>
+
+            <div class=" kpi">
+                <h4>Menor Temperatura registrada:</h4>
+                <p class="data min">25° C</p>
+                <p class="datatime">Registrada em 17/04/2025 às 20:00</p>
+            </div>
+
+            <div class=" kpi">
+                <h4>Maior Umidade registrada:</h4>
+                <p class="data max">88%</p>
+                <p class="datatime">Registrada em 17/04/2025 às 20:00</p>
+            </div>
+
+            <div class=" kpi">
+                <h4>Menor Umidade registrada:</h4>
+                <p class="data min">77%</p>
+                <p class="datatime">Registrada em 17/04/2025 às 20:00</p>
+            </div>
+        </div>
+
+        <div class="container-grafic">
+            <div class="grafic-canva">
+                <canvas id="dataLine"></canvas>
+            </div>
+            <div class="grafic-canva">
+                <canvas id="dataBar"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const dataLineGrafic = document.getElementById('dataLine');
+    const dataBarGrafic = document.getElementById('dataBar');
+
+    new Chart(dataLineGrafic, {
+        type: 'line',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [30, 25, 26, 28, 26, 29],
+                borderWidth: 2
+            },
+            {
+                label: 'Umidade',
+                data: [80, 85, 80, 88, 77, 79],
+                borderWidth: 2
+            }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 20,
+                    max: 90
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Gráfico de Linha'
+                }
+            }
+        }
+    });
+
+    new Chart(dataBarGrafic, {
+        type: 'bar',
+        data: {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [{
+                label: 'Temperatura',
+                data: [30, 25, 26, 28, 26, 29],
+                borderWidth: 2
+            },
+            {
+                label: 'Umidade',
+                data: [80, 85, 80, 88, 77, 79],
+                borderWidth: 2
+            }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    min: 0,
+                    max: 90
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Gráfico de Barras'
+                }
+            }
+        }
+    });
+
+
+</script>
